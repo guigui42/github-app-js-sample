@@ -1,10 +1,11 @@
-# Sample GitHub App
+# Sample GitHub App (TypeScript)
 
-This sample app showcases how webhooks can be used with a GitHub App's installation token to create a bot that responds to issues. Code uses [octokit.js](https://github.com/octokit/octokit.js).
+This sample app showcases how webhooks can be used with a GitHub App's installation token to create a bot that responds to issues. Code uses [octokit.js](https://github.com/octokit/octokit.js) and is written in TypeScript for enhanced type safety and developer experience.
 
 ## Requirements
 
 - Node.js 20 or higher
+- TypeScript 5.x (installed as dev dependency)
 - A GitHub App subscribed to **Pull Request** events and with the following permissions:
   - Pull requests: Read & write
   - Metadata: Read-only
@@ -16,10 +17,19 @@ This sample app showcases how webhooks can be used with a GitHub App's installat
 1. Clone this repository.
 2. Create a `.env` file similar to `.env.example` and set actual values. If you are using GitHub Enterprise Server, also include a `ENTERPRISE_HOSTNAME` variable and set the value to the name of your GitHub Enterprise Server instance.
 3. Install dependencies with `npm install`.
-4. Start the server with `npm run server`.
+4. Start the development server with `npm run dev` (for development with hot reload) or `npm run server`.
+   - For production: Build with `npm run build` and start with `npm start`.
 5. Ensure your server is reachable from the internet.
     - If you're using `smee`, run `smee -u <smee_url> -t http://localhost:3000/api/webhook`.
 6. Ensure your GitHub App includes at least one repository on its installations.
+
+## Available Scripts
+
+- `npm run dev` - Start development server with TypeScript compilation and hot reload
+- `npm run build` - Compile TypeScript to JavaScript
+- `npm start` - Run the compiled JavaScript (requires `npm run build` first)
+- `npm run type-check` - Check TypeScript types without emitting files
+- `npm run lint` - Run ESLint
 
 ## Usage
 

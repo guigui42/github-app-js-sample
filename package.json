@@ -4,15 +4,22 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "server": "node app.js",
-    "lint": "standard"
+    "build": "tsc",
+    "dev": "tsx src/app.ts",
+    "start": "node dist/app.js",
+    "server": "npm run dev",
+    "lint": "standard",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
-    "smee-client": "^2.0.1",
-    "standard": "^17.0.0"
+    "@types/node": "^24.0.3",
+    "smee-client": "^4.3.1",
+    "standard": "^17.1.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "octokit": "^4.1.1"
+    "dotenv": "^16.5.0",
+    "octokit": "^5.0.3"
   }
 }
